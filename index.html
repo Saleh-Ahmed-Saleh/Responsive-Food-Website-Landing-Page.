@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Food Website Landing Page</title>
+  </head>
+  <body>
+    <header>
+      <!-- The Navigation and Menu -->
+      <a href="#" class="logo">
+        <ion-icon name="restaurant-outline"></ion-icon>
+      </a>
+      <div class="search" onclick="toggleSearch();">
+        <ion-icon name="search-outline"></ion-icon>
+        <input type="text" placeholder="Search" />
+      </div>
+      <div class="bar">
+        <i id="btnM" class="fa-solid fa-bars"></i>
+        <ul class="nav">
+          <li><a href="#">Braekfast</a></li>
+          <li><a href="#">Lunch</a></li>
+          <li><a href="#">Dinner</a></li>
+          <li>
+            <div class="check-out">
+              <ion-icon name="bag-outline"></ion-icon>
+              <span class="number">4</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="banner">
+      <!-- 1 -->
+      <div class="content">
+        <h1>Food<ion-icon name="heart-half-outline"></ion-icon><br />Lovers</h1>
+      </div>
+      <!-- 2 -->
+      <div class="imgBox">
+        <div class="food">
+          <img
+            src="images/food-3.jpeg"
+            alt="food"
+            class="food-img"
+            onclick=" toggleFlip();"
+          />
+        </div>
+        <div class="description" onclick=" toggleFlip();">
+          <h3>Lorem ipsum dolor</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+            eligendi delectus odio iste ullam quam, doloremque voluptatem, et
+            expedita nulla eius maiores odit quis, natus saepe sed dolores. Modi
+            magnam amet tempora, dolor quas consequuntur odio, exercitationem
+            accusamus commodi iusto dolorum debitis esse harum perferendis
+            doloremque, maiores quibusdam voluptatibus id.
+          </p>
+          <ul class="downlaod">
+            <li><img src="images/apple.png" alt="food" /></li>
+            <li><img src="images/google.png" alt="food" /></li>
+          </ul>
+          <span class="price">$53.67</span>
+        </div>
+      </div>
+      <!-- Main Button -->
+      <a href="#" class="btn" onclick=" toggleFlip();">
+        Learn More <ion-icon name="search-circle-outline"></ion-icon>
+      </a>
+      <!-- order Button -->
+      <span class="order"><ion-icon name="bag-add-outline"></ion-icon></span>
+      <div class="selections">
+        <div class="circle">
+          <div class="options one" onclick="changeImg('food-1.jpeg');">
+            <img src="images/food-1.jpeg" alt="food" />
+          </div>
+          <div class="options two" onclick="changeImg('food-2.jpeg');">
+            <img src="images/food-2.jpeg" alt="food" />
+          </div>
+          <div class="options three" onclick="changeImg('food-3.jpeg');">
+            <img src="images/food-3.jpeg" alt="food" />
+          </div>
+        </div>
+        <h1>Healthy Life</h1>
+      </div>
+    </div>
+    <ul class="sci">
+      <li>
+        <a href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </li>
+    </ul>
+    <footer>
+      <div class="copyright">© 2023 Saleh Ahmed. All rights reserved.</div>
+    </footer>
+
+    <script>
+      let btnM = document.getElementById("btnM");
+      let MobNav = document.querySelector(".nav");
+      btnM.onclick = () => {
+        btnM.classList.toggle("fa-times");
+        MobNav.classList.toggle("active");
+      };
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,782 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: #FEA501;
+}
+
+body{
+    position: relative;
+    background: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+header{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    z-index: 20;
+    background: transparent;
+    box-shadow: 50px 50px 50px rgb(255, 255, 255, 0.8);
+}
+
+.logo{
+    font-size: 1.2em;
+    color: #000000;
+    letter-spacing: 2px;
+    font-weight: 800;
+    padding: 15px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0,0.1);
+    border-radius: 50%;
+    width: 58px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.logo:active{
+    box-shadow: inset 5px 5px 10px rgb(0, 0, 0,0.1);
+}
+
+
+
+/* search  Button*/
+.search input{
+    display: none;
+}
+
+.search{
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+    border-radius: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.search ion-icon{
+    font-size: 1.2em;
+    color: #000000;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+.search ion-icon:hover{
+    color: var(--primary);
+}
+
+/* When click search  */
+.search:active{
+    box-shadow: inset 5px 5px 10px rgb(0, 0, 0,0.1);
+}
+
+.search.active{
+    width: 400px;
+    border-radius: 50px;
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+.search.active input{
+    display: block;
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: 10px;
+}
+
+#btnM{
+    display: none;
+}
+.nav {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.nav li{
+    list-style: none;
+}
+
+
+.nav li a{
+    color: #000000;
+    text-decoration: none;
+    text-transform:capitalize;
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px;
+    transform: 0.3s;
+}
+
+.nav li:hover a{
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+.check-out{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+    border-radius: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.check-out ion-icon{
+    font-size: 1.2em;
+    color: #000000;
+    cursor: pointer;
+}
+
+.check-out ion-icon:hover{
+    color: var(--primary);
+}
+
+.check-out span{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 0.6em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 5px;
+    bottom: 10px;
+}
+
+.check-out:active{
+    box-shadow: inset 5px 5px 10px rgb(0, 0, 0,0.1);
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+    perspective: 1000px;
+}
+
+.banner .imgBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%,-50%); */
+    width: 50px;
+    height: 50px;
+    box-shadow: 15px 15px 20px rgb(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.5s;
+    transform-style: preserve-3d !important;
+}
+
+.banner .imgBox .food {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px 5px rgb(0, 0, 0, 0.1);
+    transition: 0.5s;
+}
+
+.banner .imgBox .food img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.banner .imgBox.active{
+    transform: translate(-50%,-50%) rotateY(180deg);
+}
+
+.banner .imgBox .description{
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    margin-top: 50px ;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 5px 10px rgb(0, 0, 0, 0.5);
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.description h3{
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+
+.description p{
+    font-size: 0.8em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-align: center;
+    /* margin: 0 60px; */
+    padding: 0 40px;
+}
+
+
+.description .downlaod{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.description .downlaod li{
+    list-style: none;
+    gap: 10px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.1);
+    padding: 5px 5px 0;
+}
+
+.description .downlaod li img{
+    max-width: 200px;
+}
+
+.imgBox .price{
+    color: var(--primary);
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0.1);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+
+.btn{
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    bottom: 1%;
+    left: 70%;
+    text-decoration: none;
+    transform: translateX(-50%);
+    color: #000000;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    text-transform:uppercase;
+    padding: 15px 30px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0.1);
+    border-bottom-left-radius: 30px;
+    transition: 0.3s;
+    z-index: 1000;
+    margin-top: 20px;
+}
+
+.btn ion-icon{
+    font-size: 1.5em;
+}
+
+.btn.active{
+    box-shadow: 5px 5px 10px rgb(0, 0, 0.1);
+}
+
+.btn:hover{
+    color: var(--primary);
+}
+
+.order{
+    position: absolute;
+    left: 8%;
+    bottom: 70%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.order ion-icon{
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #000000;
+    transition: 0.3s;
+}
+
+.order:hover ion-icon{
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.order:active{
+    box-shadow: inset 5px 5px 10px rgb(0, 0, 0.1);
+}
+
+/*  */
+
+.banner .content{
+    font-family: 'Berkshire Swash', cursive;
+    font-size:3em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1em;
+    letter-spacing: 2px;
+    top: 35%;
+    left: 1%;
+    z-index: 10;
+}
+.banner .content h1{
+    line-height: 1em;
+    letter-spacing: 5px;
+}
+
+.banner .content h1 ion-icon{
+    color: var(--primary);
+    margin: 10px;
+    transform: rotateZ(-30deg);
+}
+
+/* The right section */
+.banner .selections{
+    position: relative;
+    height: 100vh;
+    width: 20%;
+}
+
+
+/* Here The animation effect applied */
+/* Drawing the circle on the right section and make shdow*/
+.banner .circle{
+    position: absolute;
+    top: 60%;
+    left: 420%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 10px rgb(0, 0, 0.1);
+    animation: animate 10s linear infinite !important;
+    padding: 20px 20px;
+    -webkit-animation: animate 10s linear infinite !important;
+}
+.banner .selections img{
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.banner .selections img:active{
+    box-shadow:inset 5px 5px 10px rgb(0, 0, 0, 5) ;
+}
+
+@keyframes animate{
+    0% ,
+    100% {
+        transform: translateY(-50%) rotateZ(0);
+}
+    30%{
+        transform: translateY(-50%) rotateZ(10deg);
+}
+    60%{
+        transform: translateY(-50%) rotateZ(-10deg);
+}
+
+}
+
+/* ADjust the postion of the image on the line */
+.banner .selections .circle .one{
+    transform: translate(-5%,-25%);
+}
+
+.banner .selections .circle .two{
+    transform: translate(-20%,-5%);
+}
+
+
+.banner .selections .circle .three{
+    transform: translate(-5%,10%);
+}
+
+.banner .selections h1{
+    font-family: 'Berkshire Swash', cursive;
+    position:absolute;
+    font-size: 4em;
+    left: 450%;
+    top: 50%;
+    transform: translateY(-10%) rotateZ(90deg);
+    opacity: 0.3;
+    text-align: center;
+    line-height: 0.9em;
+}
+
+
+
+/* Socila Media Icons */
+
+.sci{
+    position: absolute;
+    color: #000000;
+    left: 3%;
+    bottom: 10%;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+    list-style: none;
+}
+
+.sci li{
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+
+.sci li:active {
+    box-shadow: inset 1px 1px 1px rgb(0, 0, 0.1);
+}
+
+.sci li ion-icon{
+    color: #000000;
+    padding: 5px;
+    font-size: 1.5em;
+    transition: 0.3s;
+}
+
+
+
+.sci li ion-icon:hover{
+    color: var(--primary); 
+}
+
+/* Fotter*/
+
+
+footer{
+    position: absolute;
+    color: #ffffff;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 100px;
+    background: var(--primary);
+    border-top-right-radius: 30px;
+    box-shadow: 20px 20px 20px 60px rgb(255, 255, 255, 0.8);
+}
+
+@media (max-width:600px){
+
+    header{
+        z-index: 20;
+        background: transparent;
+        box-shadow: none;
+        }
+        
+        #btnM{
+            display: block;
+            color: #000000;
+            font-size: 28px;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        
+        .nav {
+            position: absolute;
+            top: -120vh !important;
+            width: 100%;
+            height:100vh;
+            text-align: left;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 0px;
+            /* border-radius: 30%; */
+            background: rgb(255, 255, 255,0.4);
+            backdrop-filter: blur(15px);
+            font-size: 1.8em;
+        }
+        .nav.active{
+            position: absolute;
+            top: 100% !important; 
+            left: 0;
+        }
+    
+
+    .logo{
+        font-size: 1.9em;
+        width: 60px;
+        height: 60px;
+        }
+    
+    
+    
+    
+    /* Noraml Design before click search */
+
+    
+    .search{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+    }
+    
+    
+    .search.active{
+        width: 210px;
+        z-index: 170;
+        margin-left: 30px;
+    }
+    
+
+    /* Upper Face of Image */
+    .banner .imgBox .food {
+        width: 280px;
+        height: 280px;
+        transform:translate(-10%,15%);
+}
+
+    .banner .imgBox.active{
+        transform:translate(-60%,50%) rotateY(180deg);
+        -webkit-transform:translate(-60%,50%) rotateY(180deg);
+        -moz-transform:translate(-60%,50%) rotateY(180deg);
+        -ms-transform:translate(-60%,50%) rotateY(180deg);
+        -o-transform:translate(-60%,50%) rotateY(180deg);
+}   
+    
+    /* Back Face of Image */
+    .banner .imgBox .description{
+        width: 280px;
+        height: 280px;
+        padding: 0 0;
+    }
+    
+    .description h3{
+        font-size: 1em;
+        font-weight: 500;
+        transform:translate(0,6%)    ;
+
+}
+    
+    
+    .description p{
+        font-size: 0.6em;
+    }
+    
+    
+    .description .downlaod li img{
+        max-width: 90px;    
+    }
+    
+    .imgBox .price{
+        font-size: 0.8em;
+        padding: 0 10px;
+    }
+    
+    
+    .btn{
+        bottom: 10%;
+        left: 80%;
+        font-size: 0.7em;
+        padding: 0 10px;
+        text-align: center;
+    }
+    
+    .btn ion-icon{
+        font-size: 3em;
+    }
+    
+    /* Order Icon */
+    .order{
+        left: 1%;
+        bottom: 55%;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .order ion-icon{
+        font-size: 1.2em;
+    }
+    
+    
+    .banner .content{
+        font-size:1em;
+        top: 11%;
+        left: 5%;
+        text-align: center;
+    }
+    
+    /* Circles */
+    .banner .circle{
+        top: 8%;
+        left: 550%;
+        rotate: -30deg;
+        width: 250px;
+        height: 250px;
+    }
+
+    .banner .selections img{
+        width: 80px;
+        height: 80px;
+    }
+    
+    
+    .banner .selections h1{
+        font-size: 2em;
+        top: 8%;
+}
+    
+    /* social Media */
+    .sci{
+        left: 1%;
+        bottom: 10%;
+        font-size: 1.2em;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sci li{
+        width: 50px;
+        height: 50px;
+        padding: 2px;
+
+    }
+    /* Fotter*/
+    
+    
+    footer{
+        left: 0;
+        bottom: 0;
+        padding: 0;
+        letter-spacing: 2px;
+        text-align: center;
+        font-size: 1.1em;
+        box-shadow: 1px 1px 1px 1px rgb(255, 255, 255, 0.8);
+
+    }   
+    
+}
+
+@media  (min-width:600px) and (max-width:1300px){
+    
+    
+    header{
+        z-index: 20;
+        background: transparent;
+        box-shadow: none;
+        top: 0;
+        }
+
+    .btn{
+        bottom: 10%;
+        left: 50%;
+        font-size: 1.6em;
+        padding: 0 10px;
+        text-align: center;
+    }
+    .banner .content{
+        font-size:2.5em;
+        top: 14%;
+        left: 35%;
+        text-align: center;
+    }
+    
+    .nav {
+        font-size: 1.8em;
+    }
+    .search{
+        top: 90%;
+        
+    }
+    footer{
+        font-size: 1.7em;
+    } 
+}
+
+
